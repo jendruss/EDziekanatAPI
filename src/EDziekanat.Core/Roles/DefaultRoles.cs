@@ -11,7 +11,8 @@ namespace EDziekanat.Core.Roles
             return new List<Role>
             {
                 Admin,
-                Member
+                Employee,
+                Student
             };
         }
 
@@ -23,15 +24,24 @@ namespace EDziekanat.Core.Roles
             IsSystemDefault = true
         };
 
-        public static readonly Role Member = new Role
+        public static readonly Role Employee = new Role
         {
             Id = new Guid("11D14A89-3A93-4D39-A94F-82B823F0D4CE"),
-            Name = RoleNameForMember,
-            NormalizedName = RoleNameForMember.ToUpper(CultureInfo.GetCultureInfo("en_US")),
+            Name = RoleNameForEmployee,
+            NormalizedName = RoleNameForEmployee.ToUpper(CultureInfo.GetCultureInfo("en_US")),
+            IsSystemDefault = true
+        };
+
+        public static readonly Role Student = new Role
+        {
+            Id = new Guid("A8856D4E-779C-4A49-8378-6B584C3D38FB"),
+            Name = RoleNameForStudent,
+            NormalizedName = RoleNameForStudent.ToUpper(CultureInfo.GetCultureInfo("en_US")),
             IsSystemDefault = true
         };
 
         private const string RoleNameForAdmin = "Admin";
-        private const string RoleNameForMember = "Member";
+        private const string RoleNameForEmployee = "Employee";
+        private const string RoleNameForStudent = "Student";
     }
 }

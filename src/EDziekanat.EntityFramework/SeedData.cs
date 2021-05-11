@@ -28,16 +28,17 @@ namespace EDziekanat.EntityFramework
                     RoleId = DefaultRoles.Admin.Id,
                     UserId = DefaultUsers.Admin.Id
                 },
+                //employee role to employee user
                 new UserRole
                 {
-                    RoleId = DefaultRoles.Admin.Id,
-                    UserId = DefaultUsers.TestAdmin.Id
+                    RoleId = DefaultRoles.Employee.Id,
+                    UserId = DefaultUsers.Employee.Id
                 },
-                //member role to member user
+                //student role to student user
                 new UserRole
                 {
-                    RoleId = DefaultRoles.Member.Id,
-                    UserId = DefaultUsers.Member.Id
+                    RoleId = DefaultRoles.Student.Id,
+                    UserId = DefaultUsers.Student.Id
                 }
             };
         }
@@ -61,7 +62,7 @@ namespace EDziekanat.EntityFramework
             rolePermissions.Add(new RolePermission
             {
                 PermissionId = DefaultPermissions.MemberAccess.Id,
-                RoleId = DefaultRoles.Member.Id
+                RoleId = DefaultRoles.Employee.Id
             });
 
             return rolePermissions.ToArray();

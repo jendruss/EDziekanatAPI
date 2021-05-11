@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using EDziekanat.Application.Departments.Dto;
 using EDziekanat.Application.Permissions.Dto;
 using EDziekanat.Application.Roles.Dto;
 using EDziekanat.Application.Users.Dto;
+using EDziekanat.Core.Departments;
 using EDziekanat.Core.Permissions;
 using EDziekanat.Core.Roles;
 using EDziekanat.Core.Users;
@@ -19,6 +21,8 @@ namespace EDziekanat.Application
             CreateMap<Permission, PermissionDto>();
             CreateMap<Role, RoleDto>();
             CreateMap<Role, RoleListOutput>();
+
+            CreateMap<CreateOrUpdateDepartmentDto, Department>();
         }
     }
 }

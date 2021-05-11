@@ -3,19 +3,28 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EDziekanat.EntityFramework.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitEntities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Departments",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departments", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Permission",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CreationDate = table.Column<DateTime>(nullable: false),
-                    ModificationDate = table.Column<DateTime>(nullable: false),
-                    CreatorId = table.Column<Guid>(nullable: false),
-                    ModifierId = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     DisplayName = table.Column<string>(nullable: true)
                 },
@@ -40,28 +49,23 @@ namespace EDziekanat.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "DeansOffices",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(nullable: false),
-                    PasswordHash = table.Column<string>(nullable: true),
-                    SecurityStamp = table.Column<string>(nullable: true),
-                    ConcurrencyStamp = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
-                    LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    DepartmentId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_DeansOffices", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DeansOffices_Departments_DepartmentId",
+                        column: x => x.DepartmentId,
+                        principalTable: "Departments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -107,6 +111,109 @@ namespace EDziekanat.EntityFramework.Migrations
                         principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Operations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    DeansOfficeId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Operations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Operations_DeansOffices_DeansOfficeId",
+                        column: x => x.DeansOfficeId,
+                        principalTable: "DeansOffices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    DeansOfficeId = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_User_DeansOffices_DeansOfficeId",
+                        column: x => x.DeansOfficeId,
+                        principalTable: "DeansOffices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Text = table.Column<string>(nullable: true),
+                    StudentId = table.Column<Guid>(nullable: false),
+                    DeansOfficeId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Messages_DeansOffices_DeansOfficeId",
+                        column: x => x.DeansOfficeId,
+                        principalTable: "DeansOffices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Messages_User_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reservations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false),
+                    DeansOfficeId = table.Column<Guid>(nullable: false),
+                    StudentId = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reservations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reservations_DeansOffices_DeansOfficeId",
+                        column: x => x.DeansOfficeId,
+                        principalTable: "DeansOffices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reservations_User_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -196,19 +303,19 @@ namespace EDziekanat.EntityFramework.Migrations
 
             migrationBuilder.InsertData(
                 table: "Permission",
-                columns: new[] { "Id", "CreationDate", "CreatorId", "DisplayName", "ModificationDate", "ModifierId", "Name" },
+                columns: new[] { "Id", "DisplayName", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("2a1ccb43-fa4f-48ce-b601-d3ab4d611b32"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Administration access", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Administration" },
-                    { new Guid("28126ffd-51c2-4201-939c-b64e3df43b9d"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Member access", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Member_Access" },
-                    { new Guid("86d804bd-d022-49a5-821a-d2240478aac4"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "User read", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_User_Read" },
-                    { new Guid("8f3de3ec-3851-4ba9-887a-2119f18ae744"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "User create", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_User_Create" },
-                    { new Guid("068a0171-a141-4eb2-854c-88e43ef9ab7f"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "User update", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_User_Update" },
-                    { new Guid("70b5c5c3-2267-4f7c-b0f9-7ecc952e04a6"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "User delete", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_User_Delete" },
-                    { new Guid("80562f50-8a7d-4bcd-8971-6d856bbcbb7f"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Role read", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Role_Read" },
-                    { new Guid("d4d7c0e3-efcf-4dd2-86e7-17d69fda8c75"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Role create", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Role_Create" },
-                    { new Guid("ea003a99-4755-4c19-b126-c5cffbc65088"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Role update", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Role_Update" },
-                    { new Guid("8f76de0b-114a-4df8-a93d-cec927d06a3c"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Role delete", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("00000000-0000-0000-0000-000000000000"), "Permissions_Role_Delete" }
+                    { new Guid("2a1ccb43-fa4f-48ce-b601-d3ab4d611b32"), "Administration access", "Permissions_Administration" },
+                    { new Guid("28126ffd-51c2-4201-939c-b64e3df43b9d"), "Member access", "Permissions_Member_Access" },
+                    { new Guid("86d804bd-d022-49a5-821a-d2240478aac4"), "User read", "Permissions_User_Read" },
+                    { new Guid("8f3de3ec-3851-4ba9-887a-2119f18ae744"), "User create", "Permissions_User_Create" },
+                    { new Guid("068a0171-a141-4eb2-854c-88e43ef9ab7f"), "User update", "Permissions_User_Update" },
+                    { new Guid("70b5c5c3-2267-4f7c-b0f9-7ecc952e04a6"), "User delete", "Permissions_User_Delete" },
+                    { new Guid("80562f50-8a7d-4bcd-8971-6d856bbcbb7f"), "Role read", "Permissions_Role_Read" },
+                    { new Guid("d4d7c0e3-efcf-4dd2-86e7-17d69fda8c75"), "Role create", "Permissions_Role_Create" },
+                    { new Guid("ea003a99-4755-4c19-b126-c5cffbc65088"), "Role update", "Permissions_Role_Update" },
+                    { new Guid("8f76de0b-114a-4df8-a93d-cec927d06a3c"), "Role delete", "Permissions_Role_Delete" }
                 });
 
             migrationBuilder.InsertData(
@@ -216,18 +323,19 @@ namespace EDziekanat.EntityFramework.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "IsSystemDefault", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"), "38f71860-1002-4dcf-8070-c77353c334be", true, "Admin", "ADMIN" },
-                    { new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"), "ce7f6aa1-535e-47bb-84d2-bb828fdf3428", true, "Member", "MEMBER" }
+                    { new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"), "20ca059c-47e8-44d2-820c-e374d4c6a2c3", true, "Admin", "ADMIN" },
+                    { new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"), "064c3ccf-6605-420e-9cdf-65d8413986d0", true, "Employee", "EMPLOYEE" },
+                    { new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb"), "70eab500-7e8a-406e-b544-47a93963ac1f", true, "Student", "STUDENT" }
                 });
 
             migrationBuilder.InsertData(
                 table: "User",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DeansOfficeId", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"), 5, "8abae37f-f823-478d-a82d-e28479963408", "admin@mail.com", true, false, null, "ADMIN@MAIL.COM", "ADMIN", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "admin" },
-                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), 5, "2f88c477-f176-4cd8-aa41-7ae0f812c03e", "memberuser@mail.com", true, false, null, "MEMBERUSER@MAIL.COM", "MEMBERUSER", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "memberuser" },
-                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), 5, "db73c79a-ab9f-435f-899f-399c5c075dd7", "testadmin@mail.com", true, false, null, "TESTADMIN@MAIL.COM", "TESTADMIN", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "testadmin" }
+                    { new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"), 5, "3d527fe6-d18c-41ad-ae75-a572ba6701e2", null, "admin@mail.com", true, false, null, "ADMIN@MAIL.COM", "ADMIN", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Admin" },
+                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), 5, "7e042b1e-ac3b-4209-951b-2842747a2d85", null, "employee@mail.com", true, false, null, "EMPLOYEE@MAIL.COM", "PRACOWNIK DZIEKANATU", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Pracownik dziekanatu" },
+                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), 5, "5b8eeb3b-8a69-42c6-bd79-dc772767d68c", null, "student@mail.com", true, false, null, "STUDENT@MAIL.COM", "STUDENT", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Student" }
                 });
 
             migrationBuilder.InsertData(
@@ -254,9 +362,39 @@ namespace EDziekanat.EntityFramework.Migrations
                 values: new object[,]
                 {
                     { new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"), new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263") },
-                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce") },
-                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263") }
+                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce") },
+                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb") }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DeansOffices_DepartmentId",
+                table: "DeansOffices",
+                column: "DepartmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_DeansOfficeId",
+                table: "Messages",
+                column: "DeansOfficeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_StudentId",
+                table: "Messages",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Operations_DeansOfficeId",
+                table: "Operations",
+                column: "DeansOfficeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservations_DeansOfficeId",
+                table: "Reservations",
+                column: "DeansOfficeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservations_StudentId",
+                table: "Reservations",
+                column: "StudentId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -274,6 +412,11 @@ namespace EDziekanat.EntityFramework.Migrations
                 name: "IX_RolePermission_PermissionId",
                 table: "RolePermission",
                 column: "PermissionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_User_DeansOfficeId",
+                table: "User",
+                column: "DeansOfficeId");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -306,6 +449,15 @@ namespace EDziekanat.EntityFramework.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Messages");
+
+            migrationBuilder.DropTable(
+                name: "Operations");
+
+            migrationBuilder.DropTable(
+                name: "Reservations");
+
+            migrationBuilder.DropTable(
                 name: "RoleClaim");
 
             migrationBuilder.DropTable(
@@ -331,6 +483,12 @@ namespace EDziekanat.EntityFramework.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "DeansOffices");
+
+            migrationBuilder.DropTable(
+                name: "Departments");
         }
     }
 }

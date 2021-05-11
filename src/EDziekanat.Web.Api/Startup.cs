@@ -1,4 +1,5 @@
 ﻿using EDziekanat.Application;
+using EDziekanat.Application.Departments;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +52,7 @@ namespace EDziekanat.Web.Api
             });
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

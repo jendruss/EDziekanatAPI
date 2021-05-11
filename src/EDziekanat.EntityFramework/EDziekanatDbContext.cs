@@ -1,4 +1,7 @@
 ﻿using System;
+using EDziekanat.Core.DeansOffices;
+using EDziekanat.Core.Departments;
+using EDziekanat.Core.Messages;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -17,8 +20,13 @@ namespace EDziekanat.EntityFramework
         }
 
         public DbSet<Permission> Permissions { get; set; }
-
         public DbSet<RolePermission> RolePermissions { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<DeansOffice> DeansOffices { get; set; }
+        public DbSet<Operation> Operations { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Message> Messages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -69,6 +77,43 @@ namespace EDziekanat.EntityFramework
             modelBuilder.Entity<UserLogin>().ToTable("UserLogin");
             modelBuilder.Entity<RoleClaim>().ToTable("RoleClaim");
             modelBuilder.Entity<UserToken>().ToTable("UserToken");
+
+            modelBuilder.Entity<User>()
+                .HasOne<DeansOffice>(e => e.DeansOffice)
+                .WithMany(d => d.Employees)
+                .HasForeignKey(u => u.DeansOfficeId)
+                .IsRequired(false);
+
+            modelBuilder.Entity<Operation>()
+                .HasOne<DeansOffice>(o => o.DeansOffice)
+                .WithMany(d => d.Operations)
+                .HasForeignKey(o => o.DeansOfficeId);
+
+            modelBuilder.Entity<Reservation>()
+                .HasOne<User>(r => r.Student)
+                .WithMany(u => u.Reservations)
+                .HasForeignKey(u => u.StudentId)
+                .IsRequired(false);
+
+            modelBuilder.Entity<Reservation>()
+                .HasOne<DeansOffice>(r => r.DeansOffice)
+                .WithMany(d => d.Reservations)
+                .HasForeignKey(u => u.DeansOfficeId);
+
+            modelBuilder.Entity<Message>()
+                .HasOne<User>(m => m.User)
+                .WithMany(u => u.Messages)
+                .HasForeignKey(u => u.StudentId);
+
+            modelBuilder.Entity<Message>()
+                .HasOne<DeansOffice>(m => m.DeansOffice)
+                .WithMany(u => u.Messages)
+                .HasForeignKey(u => u.DeansOfficeId);
+
+            modelBuilder.Entity<DeansOffice>()
+                .HasOne<Department>(d => d.Department)
+                .WithMany(u => u.DeansOffices)
+                .HasForeignKey(u => u.DepartmentId);
         }
     }
 }

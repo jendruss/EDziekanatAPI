@@ -10,16 +10,122 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EDziekanat.EntityFramework.Migrations
 {
     [DbContext(typeof(EDziekanatDbContext))]
-    [Migration("20210503180345_Init")]
-    partial class Init
+    [Migration("20210511165042_InitEntities")]
+    partial class InitEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.DeansOffice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DepartmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("DeansOffices");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.Operation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DeansOfficeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeansOfficeId");
+
+                    b.ToTable("Operations");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.Reservation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("DeansOfficeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeansOfficeId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.Departments.Department", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.Messages.Message", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DeansOfficeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeansOfficeId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Messages");
+                });
 
             modelBuilder.Entity("EDziekanat.Core.Permissions.Permission", b =>
                 {
@@ -27,20 +133,8 @@ namespace EDziekanat.EntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("CreatorId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("DisplayName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ModificationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("ModifierId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -53,101 +147,61 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("2a1ccb43-fa4f-48ce-b601-d3ab4d611b32"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Administration access",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Administration"
                         },
                         new
                         {
                             Id = new Guid("28126ffd-51c2-4201-939c-b64e3df43b9d"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Member access",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Member_Access"
                         },
                         new
                         {
                             Id = new Guid("86d804bd-d022-49a5-821a-d2240478aac4"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "User read",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_User_Read"
                         },
                         new
                         {
                             Id = new Guid("8f3de3ec-3851-4ba9-887a-2119f18ae744"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "User create",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_User_Create"
                         },
                         new
                         {
                             Id = new Guid("068a0171-a141-4eb2-854c-88e43ef9ab7f"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "User update",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_User_Update"
                         },
                         new
                         {
                             Id = new Guid("70b5c5c3-2267-4f7c-b0f9-7ecc952e04a6"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "User delete",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_User_Delete"
                         },
                         new
                         {
                             Id = new Guid("80562f50-8a7d-4bcd-8971-6d856bbcbb7f"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Role read",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Role_Read"
                         },
                         new
                         {
                             Id = new Guid("d4d7c0e3-efcf-4dd2-86e7-17d69fda8c75"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Role create",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Role_Create"
                         },
                         new
                         {
                             Id = new Guid("ea003a99-4755-4c19-b126-c5cffbc65088"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Role update",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Role_Update"
                         },
                         new
                         {
                             Id = new Guid("8f76de0b-114a-4df8-a93d-cec927d06a3c"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatorId = new Guid("00000000-0000-0000-0000-000000000000"),
                             DisplayName = "Role delete",
-                            ModificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ModifierId = new Guid("00000000-0000-0000-0000-000000000000"),
                             Name = "Permissions_Role_Delete"
                         });
                 });
@@ -186,7 +240,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"),
-                            ConcurrencyStamp = "dc55b95c-2b9d-42f4-b4ae-0e33b5178c6d",
+                            ConcurrencyStamp = "20ca059c-47e8-44d2-820c-e374d4c6a2c3",
                             IsSystemDefault = true,
                             Name = "Admin",
                             NormalizedName = "ADMIN"
@@ -194,10 +248,18 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"),
-                            ConcurrencyStamp = "510a7a7d-de6c-4edc-8e71-e95cc079c123",
+                            ConcurrencyStamp = "064c3ccf-6605-420e-9cdf-65d8413986d0",
                             IsSystemDefault = true,
-                            Name = "Member",
-                            NormalizedName = "MEMBER"
+                            Name = "Employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb"),
+                            ConcurrencyStamp = "70eab500-7e8a-406e-b544-47a93963ac1f",
+                            IsSystemDefault = true,
+                            Name = "Student",
+                            NormalizedName = "STUDENT"
                         });
                 });
 
@@ -309,6 +371,9 @@ namespace EDziekanat.EntityFramework.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("DeansOfficeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -351,6 +416,8 @@ namespace EDziekanat.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DeansOfficeId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -366,7 +433,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         {
                             Id = new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"),
                             AccessFailedCount = 5,
-                            ConcurrencyStamp = "f9398208-4a5f-4843-ab1c-2a5022f8da3b",
+                            ConcurrencyStamp = "3d527fe6-d18c-41ad-ae75-a572ba6701e2",
                             Email = "admin@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
@@ -375,37 +442,37 @@ namespace EDziekanat.EntityFramework.Migrations
                             PasswordHash = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
-                            UserName = "admin"
-                        },
-                        new
-                        {
-                            Id = new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"),
-                            AccessFailedCount = 5,
-                            ConcurrencyStamp = "17d5916a-e732-44f5-83d5-2b673fa5ff2b",
-                            Email = "memberuser@mail.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "MEMBERUSER@MAIL.COM",
-                            NormalizedUserName = "MEMBERUSER",
-                            PasswordHash = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "memberuser"
+                            UserName = "Admin"
                         },
                         new
                         {
                             Id = new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"),
                             AccessFailedCount = 5,
-                            ConcurrencyStamp = "5f909e9d-b0b0-4cb6-a64f-2fb7ccc36431",
-                            Email = "testadmin@mail.com",
+                            ConcurrencyStamp = "7e042b1e-ac3b-4209-951b-2842747a2d85",
+                            Email = "employee@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "TESTADMIN@MAIL.COM",
-                            NormalizedUserName = "TESTADMIN",
+                            NormalizedEmail = "EMPLOYEE@MAIL.COM",
+                            NormalizedUserName = "PRACOWNIK DZIEKANATU",
                             PasswordHash = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
-                            UserName = "testadmin"
+                            UserName = "Pracownik dziekanatu"
+                        },
+                        new
+                        {
+                            Id = new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"),
+                            AccessFailedCount = 5,
+                            ConcurrencyStamp = "5b8eeb3b-8a69-42c6-bd79-dc772767d68c",
+                            Email = "student@mail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT@MAIL.COM",
+                            NormalizedUserName = "STUDENT",
+                            PasswordHash = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "Student"
                         });
                 });
 
@@ -476,12 +543,12 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             UserId = new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"),
-                            RoleId = new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263")
+                            RoleId = new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce")
                         },
                         new
                         {
                             UserId = new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"),
-                            RoleId = new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce")
+                            RoleId = new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb")
                         });
                 });
 
@@ -502,6 +569,52 @@ namespace EDziekanat.EntityFramework.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserToken");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.DeansOffice", b =>
+                {
+                    b.HasOne("EDziekanat.Core.Departments.Department", "Department")
+                        .WithMany("DeansOffices")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.Operation", b =>
+                {
+                    b.HasOne("EDziekanat.Core.DeansOffices.DeansOffice", "DeansOffice")
+                        .WithMany("Operations")
+                        .HasForeignKey("DeansOfficeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.DeansOffices.Reservation", b =>
+                {
+                    b.HasOne("EDziekanat.Core.DeansOffices.DeansOffice", "DeansOffice")
+                        .WithMany("Reservations")
+                        .HasForeignKey("DeansOfficeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EDziekanat.Core.Users.User", "Student")
+                        .WithMany("Reservations")
+                        .HasForeignKey("StudentId");
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.Messages.Message", b =>
+                {
+                    b.HasOne("EDziekanat.Core.DeansOffices.DeansOffice", "DeansOffice")
+                        .WithMany("Messages")
+                        .HasForeignKey("DeansOfficeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EDziekanat.Core.Users.User", "User")
+                        .WithMany("Messages")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EDziekanat.Core.Roles.RoleClaim", b =>
@@ -526,6 +639,13 @@ namespace EDziekanat.EntityFramework.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EDziekanat.Core.Users.User", b =>
+                {
+                    b.HasOne("EDziekanat.Core.DeansOffices.DeansOffice", "DeansOffice")
+                        .WithMany("Employees")
+                        .HasForeignKey("DeansOfficeId");
                 });
 
             modelBuilder.Entity("EDziekanat.Core.Users.UserClaim", b =>
