@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EDziekanat.EntityFramework.Migrations
 {
-    public partial class InitEntities : Migration
+    public partial class InitModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -170,6 +170,7 @@ namespace EDziekanat.EntityFramework.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Text = table.Column<string>(nullable: true),
+                    SendDate = table.Column<DateTime>(nullable: false),
                     StudentId = table.Column<Guid>(nullable: false),
                     DeansOfficeId = table.Column<Guid>(nullable: false)
                 },
@@ -323,9 +324,9 @@ namespace EDziekanat.EntityFramework.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "IsSystemDefault", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"), "20ca059c-47e8-44d2-820c-e374d4c6a2c3", true, "Admin", "ADMIN" },
-                    { new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"), "064c3ccf-6605-420e-9cdf-65d8413986d0", true, "Employee", "EMPLOYEE" },
-                    { new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb"), "70eab500-7e8a-406e-b544-47a93963ac1f", true, "Student", "STUDENT" }
+                    { new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"), "0c8b4a1f-0ef7-4b56-a746-a2d34785a019", true, "Admin", "ADMIN" },
+                    { new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"), "9e8c33ee-c78e-4a02-a02c-9fb9402dd57b", true, "Employee", "EMPLOYEE" },
+                    { new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb"), "a207ac8e-06e1-446a-b698-ae79230aa306", true, "Student", "STUDENT" }
                 });
 
             migrationBuilder.InsertData(
@@ -333,9 +334,9 @@ namespace EDziekanat.EntityFramework.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DeansOfficeId", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"), 5, "3d527fe6-d18c-41ad-ae75-a572ba6701e2", null, "admin@mail.com", true, false, null, "ADMIN@MAIL.COM", "ADMIN", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Admin" },
-                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), 5, "7e042b1e-ac3b-4209-951b-2842747a2d85", null, "employee@mail.com", true, false, null, "EMPLOYEE@MAIL.COM", "PRACOWNIK DZIEKANATU", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Pracownik dziekanatu" },
-                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), 5, "5b8eeb3b-8a69-42c6-bd79-dc772767d68c", null, "student@mail.com", true, false, null, "STUDENT@MAIL.COM", "STUDENT", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Student" }
+                    { new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"), 5, "8af42417-440a-43cf-b273-1af28b9892fa", null, "admin@mail.com", true, false, null, "ADMIN@MAIL.COM", "ADMIN", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Admin" },
+                    { new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"), 5, "1f9b680a-dd6d-4e0e-9802-f10fbf243446", null, "employee@mail.com", true, false, null, "EMPLOYEE@MAIL.COM", "PRACOWNIK DZIEKANATU", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Pracownik dziekanatu" },
+                    { new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"), 5, "9a905320-129f-4bc3-bc38-0320e2c282a6", null, "student@mail.com", true, false, null, "STUDENT@MAIL.COM", "STUDENT", "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==", null, false, null, false, "Student" }
                 });
 
             migrationBuilder.InsertData(

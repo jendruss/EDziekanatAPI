@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using EDziekanat.Core.DeansOffices;
 using EDziekanat.Core.Users;
@@ -10,6 +11,7 @@ namespace EDziekanat.Core.Messages
     {
         //todo: Czat mial zawierac załaczniki np pliki/zdjecia itp. - dodac property odpowiedzielane za przechowywanie plików
         public string Text { get; set; }
+        public DateTime SendDate { get; set; }
 
         public Guid StudentId { get; set; }
         public virtual User User { get; set; }

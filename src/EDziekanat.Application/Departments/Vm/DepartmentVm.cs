@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EDziekanat.Application.Departments.Dto
+namespace EDziekanat.Application.Departments.Vm
 {
-    public class CreateOrUpdateDepartmentDto
+    public class DepartmentVm
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
     }

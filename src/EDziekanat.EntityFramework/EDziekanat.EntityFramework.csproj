@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20210511130946_AddedTablesForReservations.Designer.cs" />
     <Compile Remove="Migrations\20210511140014_AddedTablesForReservations.cs" />
     <Compile Remove="Migrations\20210511140014_AddedTablesForReservations.Designer.cs" />
+    <Compile Remove="Migrations\20210511165042_InitEntities.cs" />
+    <Compile Remove="Migrations\20210511165042_InitEntities.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,11 +9,14 @@ using Microsoft.EntityFrameworkCore;
 using EDziekanat.Core.Departments;
 using EDziekanat.EntityFramework;
 using EDziekanat.Application.Departments;
+using EDziekanat.Application.Departments.Vm;
+using EDziekanat.Core.Permissions;
 using EDziekanat.Web.Core.Controllers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EDziekanat.Web.Api.Controller.Departments
 {   
-    public class DepartmentsController : AdminController
+    public class DepartmentsController : BaseController //: AdminController
     {
         private readonly EDziekanatDbContext _context;
         private readonly IDepartmentService _departmentService;
@@ -26,16 +29,16 @@ namespace EDziekanat.Web.Api.Controller.Departments
 
         // GET: api/Departments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Department>>> GetDepartments()
+        public async Task<ActionResult<IEnumerable<DepartmentVm>>> GetDepartments()
         {
-            return await _context.Departments.ToListAsync();
+            return await _departmentService.GetAllDepartmentsAsync();
         }
 
         // GET: api/Departments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Department>> GetDepartment(Guid id)
+        public async Task<ActionResult<DepartmentVm>> GetDepartment(Guid id)
         {
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _departmentService.GetDepartmentByIdAsync(id);
 
             if (department == null)
             {
@@ -48,40 +51,28 @@ namespace EDziekanat.Web.Api.Controller.Departments
         // PUT: api/Departments/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutDepartment(Guid id, Department department)
+        [HttpPut]
+        //[Authorize(Policy = DefaultPermissions.PermissionNameForAdministration)]
+        public async Task<IActionResult> UpdateDepartment(UpdateDepartmentDto department)
         {
-            if (id != department.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(department).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                await _departmentService.UpdateDepartment(department);
             }
-            catch (DbUpdateConcurrencyException)
+            catch(Exception ex)
             {
-                if (!DepartmentExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                NotFound(ex);
             }
-
-            return NoContent();
+            
+           return NoContent();
         }
 
         // POST: api/Departments
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Department>> CreateDepartment(CreateOrUpdateDepartmentDto departmentDto)
+        //[Authorize(Policy = DefaultPermissions.PermissionNameForAdministration)]
+        public async Task<ActionResult<Department>> CreateDepartment(CreateDepartmentDto departmentDto)
         {
             var department = await _departmentService.AddDepartmentAsync(departmentDto);
             
@@ -90,23 +81,16 @@ namespace EDziekanat.Web.Api.Controller.Departments
 
         // DELETE: api/Departments/5
         [HttpDelete("{id}")]
+        //[Authorize(Policy = DefaultPermissions.PermissionNameForAdministration)]
         public async Task<ActionResult<Department>> DeleteDepartment(Guid id)
         {
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _departmentService.DeleteDepartment(id);
             if (department == null)
             {
                 return NotFound();
             }
 
-            _context.Departments.Remove(department);
-            await _context.SaveChangesAsync();
-
             return department;
-        }
-
-        private bool DepartmentExists(Guid id)
-        {
-            return _context.Departments.Any(e => e.Id == id);
         }
     }
 }

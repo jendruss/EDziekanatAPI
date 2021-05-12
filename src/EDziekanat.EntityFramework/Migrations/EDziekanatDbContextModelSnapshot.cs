@@ -110,6 +110,9 @@ namespace EDziekanat.EntityFramework.Migrations
                     b.Property<Guid>("DeansOfficeId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("SendDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("StudentId")
                         .HasColumnType("uniqueidentifier");
 
@@ -238,7 +241,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("f22bce18-06ec-474a-b9af-a9de2a7b8263"),
-                            ConcurrencyStamp = "20ca059c-47e8-44d2-820c-e374d4c6a2c3",
+                            ConcurrencyStamp = "0c8b4a1f-0ef7-4b56-a746-a2d34785a019",
                             IsSystemDefault = true,
                             Name = "Admin",
                             NormalizedName = "ADMIN"
@@ -246,7 +249,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("11d14a89-3a93-4d39-a94f-82b823f0d4ce"),
-                            ConcurrencyStamp = "064c3ccf-6605-420e-9cdf-65d8413986d0",
+                            ConcurrencyStamp = "9e8c33ee-c78e-4a02-a02c-9fb9402dd57b",
                             IsSystemDefault = true,
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
@@ -254,7 +257,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("a8856d4e-779c-4a49-8378-6b584c3d38fb"),
-                            ConcurrencyStamp = "70eab500-7e8a-406e-b544-47a93963ac1f",
+                            ConcurrencyStamp = "a207ac8e-06e1-446a-b698-ae79230aa306",
                             IsSystemDefault = true,
                             Name = "Student",
                             NormalizedName = "STUDENT"
@@ -431,7 +434,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         {
                             Id = new Guid("c41a7761-6645-4e2c-b99d-f9e767b9ac77"),
                             AccessFailedCount = 5,
-                            ConcurrencyStamp = "3d527fe6-d18c-41ad-ae75-a572ba6701e2",
+                            ConcurrencyStamp = "8af42417-440a-43cf-b273-1af28b9892fa",
                             Email = "admin@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
@@ -446,7 +449,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         {
                             Id = new Guid("4b6d9e45-626d-489a-a8cf-d32d36583af4"),
                             AccessFailedCount = 5,
-                            ConcurrencyStamp = "7e042b1e-ac3b-4209-951b-2842747a2d85",
+                            ConcurrencyStamp = "1f9b680a-dd6d-4e0e-9802-f10fbf243446",
                             Email = "employee@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
@@ -461,7 +464,7 @@ namespace EDziekanat.EntityFramework.Migrations
                         {
                             Id = new Guid("065e903e-6f7b-42b8-b807-0c4197f9d1bc"),
                             AccessFailedCount = 5,
-                            ConcurrencyStamp = "5b8eeb3b-8a69-42c6-bd79-dc772767d68c",
+                            ConcurrencyStamp = "9a905320-129f-4bc3-bc38-0320e2c282a6",
                             Email = "student@mail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
