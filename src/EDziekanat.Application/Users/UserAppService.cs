@@ -137,7 +137,7 @@ namespace EDziekanat.Application.Users
             return removeUserResult;
         }
 
-        private void GrantRolesToUser(IEnumerable<Guid> grantedRoleIds, User user)
+        public void GrantRolesToUser(IEnumerable<Guid> grantedRoleIds, User user)
         {
             foreach (var roleId in grantedRoleIds)
             {

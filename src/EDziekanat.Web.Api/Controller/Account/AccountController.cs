@@ -8,6 +8,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using EDziekanat.Application.Dto;
 using EDziekanat.Application.Dto.Account;
+using EDziekanat.Application.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using EDziekanat.Core.Permissions;
+using EDziekanat.Core.Roles;
 using EDziekanat.Core.Users;
 using EDziekanat.Web.Core.Authentication;
 using EDziekanat.Web.Core.Controllers;
@@ -28,6 +30,7 @@ namespace EDziekanat.Web.Api.Controller.Account
         private readonly IConfiguration _configuration;
         private readonly SmtpClient _smtpClient;
         readonly ILogger<AccountController> _logger;
+        private readonly IUserAppService _userAppService;
 
 
         public AccountController(
@@ -35,12 +38,14 @@ namespace EDziekanat.Web.Api.Controller.Account
             IOptions<JwtTokenConfiguration> jwtTokenConfiguration,
             IConfiguration configuration,
             SmtpClient smtpClient,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IUserAppService userAppService)
         {
             _userManager = userManager;
             _configuration = configuration;
             _smtpClient = smtpClient;
             _logger = logger;
+            _userAppService = userAppService;
             _jwtTokenConfiguration = jwtTokenConfiguration.Value;
         }
 
@@ -56,6 +61,10 @@ namespace EDziekanat.Web.Api.Controller.Account
                 });
             }
 
+            Guid.TryParse(userToVerify.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value, out var userId);
+
+            var user = await _userAppService.GetUserForCreateOrUpdateAsync(userId);
+
             var token = new JwtSecurityToken
             (
                 issuer: _jwtTokenConfiguration.Issuer,
@@ -66,7 +75,11 @@ namespace EDziekanat.Web.Api.Controller.Account
                 signingCredentials: _jwtTokenConfiguration.SigningCredentials
             );
 
-            return Ok(new LoginOutput { Token = new JwtSecurityTokenHandler().WriteToken(token) });
+            return Ok(new LoginOutput
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(token),
+                User = user
+            });
         }
 
         [HttpPost("/api/[action]")]
@@ -83,9 +96,12 @@ namespace EDziekanat.Web.Api.Controller.Account
 
             var applicationUser = new User
             {
-                UserName = input.UserName,
+                UserName = input.Login,
                 Email = input.Email,
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                FirstName = input.FirstName,
+                LastName = input.LastName,
+                DeansOfficeId = input.DeansOfficeId
             };
 
             var result = await _userManager.CreateAsync(applicationUser, input.Password);
@@ -93,6 +109,10 @@ namespace EDziekanat.Web.Api.Controller.Account
             if (!result.Succeeded)
             {
                 return BadRequest(result.Errors.Select(e => new NameValueDto(e.Code, e.Description)).ToList());
+            }
+            else
+            {
+                _userAppService.GrantRolesToUser(new List<Guid> { DefaultRoles.Student.Id }, applicationUser);
             }
 
             return Ok();
