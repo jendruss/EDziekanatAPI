@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using EDziekanat.Application.DeansOffices.Vm;
 using EDziekanat.Application.Departments.Dto;
 using EDziekanat.Application.Departments.Vm;
 using EDziekanat.Application.Permissions.Dto;
 using EDziekanat.Application.Roles.Dto;
 using EDziekanat.Application.Users.Dto;
+using EDziekanat.Core.DeansOffices;
 using EDziekanat.Core.Departments;
 using EDziekanat.Core.Permissions;
 using EDziekanat.Core.Roles;
@@ -25,6 +27,7 @@ namespace EDziekanat.Application
 
             CreateMap<CreateDepartmentDto, Department>();
             CreateMap<Department, DepartmentVm>();
+            CreateMap<DeansOffice, DeansOfficeVm>();
         }
     }
 }

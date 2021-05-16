@@ -80,7 +80,7 @@ namespace EDziekanat.EntityFramework
 
             modelBuilder.Entity<User>()
                 .HasOne<DeansOffice>(e => e.DeansOffice)
-                .WithMany(d => d.Employees)
+                .WithMany(d => d.Users)
                 .HasForeignKey(u => u.DeansOfficeId)
                 .IsRequired(false);
 

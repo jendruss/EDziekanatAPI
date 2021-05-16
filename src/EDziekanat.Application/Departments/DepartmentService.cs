@@ -48,7 +48,7 @@ namespace EDziekanat.Application.Departments
 
         public async Task<List<DepartmentVm>> GetAllDepartmentsAsync()
         {
-            var departments = await _context.Departments.ToListAsync();
+            var departments = await _context.Departments.Include(d=>d.DeansOffices).ToListAsync();
             return _mapper.Map<List<Department>, List<DepartmentVm>>(departments);
         }
 

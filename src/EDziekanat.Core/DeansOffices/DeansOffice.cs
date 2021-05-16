@@ -14,7 +14,7 @@ namespace EDziekanat.Core.DeansOffices
 
         public Guid DepartmentId { get; set; }
         public virtual Department Department { get; set; }
-        public virtual ICollection<User> Employees { get; set; }
+        public virtual ICollection<User> Users { get; set; }
         public virtual ICollection<Operation> Operations { get; set; }
         public virtual ICollection<Reservation> Reservations { get; set; }
         public virtual ICollection<Message> Messages { get; set; }

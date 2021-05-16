@@ -68,6 +68,7 @@ namespace EDziekanat.Application.Users
             {
                 Id = input.User.Id,
                 UserName = input.User.UserName,
+
                 Email = input.User.Email
             };
 

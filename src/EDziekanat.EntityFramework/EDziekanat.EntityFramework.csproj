@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20210511140014_AddedTablesForReservations.Designer.cs" />
     <Compile Remove="Migrations\20210511165042_InitEntities.cs" />
     <Compile Remove="Migrations\20210511165042_InitEntities.Designer.cs" />
+    <Compile Remove="Migrations\20210516104255_AddedDeansOfficeRelationToEveryUser.cs" />
+    <Compile Remove="Migrations\20210516104255_AddedDeansOfficeRelationToEveryUser.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EDziekanat.Core\EDziekanat.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

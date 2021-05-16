@@ -25,7 +25,9 @@ namespace EDziekanat.Core.Users
             NormalizedEmail = AdminUserEmail.ToUpper(CultureInfo.GetCultureInfo("en_US")),
             NormalizedUserName = AdminUserName.ToUpper(CultureInfo.GetCultureInfo("en_US")),
             AccessFailedCount = 5,
-            PasswordHash = PasswordHashFor123Qwe
+            PasswordHash = PasswordHashFor123Qwe,
+            FirstName = AdminUserName,
+            LastName = AdminUserName
         };
 
         public static readonly User Employee = new User

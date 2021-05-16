@@ -4082,3 +4082,448 @@ VALUES (@p0, @p1, @p2);
 2021-05-11 19:00:55.609 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Departments.DepartmentsController.CreateDepartment (EDziekanat.Web.Api) in 36561.5572ms
 2021-05-11 19:00:55.609 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Departments.DepartmentsController.CreateDepartment (EDziekanat.Web.Api)'
 2021-05-11 19:00:55.609 +02:00 [INF] Request finished in 36676.9627ms 201 application/json; charset=utf-8
+2021-05-16 13:05:59.627 +02:00 [INF] Starting web host
+2021-05-16 13:06:13.822 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-16 13:06:19.496 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-05-16 13:06:22.385 +02:00 [INF] Executed DbCommand (215ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-05-16 13:06:22.912 +02:00 [INF] Executed DbCommand (108ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-05-16 13:06:23.100 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-05-16 13:06:23.281 +02:00 [INF] Executed DbCommand (81ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-05-16 13:06:23.584 +02:00 [INF] Executed DbCommand (85ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-05-16 13:06:23.656 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-05-16 13:06:24.601 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-16 13:06:24.602 +02:00 [INF] Hosting environment: Development
+2021-05-16 13:06:24.603 +02:00 [INF] Content root path: C:\Users\Andrzej\Desktop\API\src\EDziekanat.Web.Api
+2021-05-16 13:06:24.715 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-05-16 13:06:25.208 +02:00 [INF] Request finished in 500.1042ms 200 text/html;charset=utf-8
+2021-05-16 13:06:26.261 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-05-16 13:06:26.694 +02:00 [INF] Request finished in 434.7849ms 200 application/json;charset=utf-8
+2021-05-16 13:06:45.226 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/DeansOffices  
+2021-05-16 13:06:46.123 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.DeansOffices.DeansOfficesController.GetDeansOffices (EDziekanat.Web.Api)'
+2021-05-16 13:06:46.210 +02:00 [INF] Route matched with {action = "GetDeansOffices", controller = "DeansOffices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[EDziekanat.Core.DeansOffices.DeansOffice]]] GetDeansOffices() on controller EDziekanat.Web.Api.Controller.DeansOffices.DeansOfficesController (EDziekanat.Web.Api).
+2021-05-16 13:06:46.340 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-05-16 13:06:46.586 +02:00 [INF] Executed DbCommand (140ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Description], [d].[Name]
+FROM [DeansOffices] AS [d]
+2021-05-16 13:06:46.824 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Core.DeansOffices.DeansOffice, EDziekanat.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-05-16 13:06:47.027 +02:00 [INF] Executed DbCommand (77ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[Address], [d].[Name]
+FROM [Departments] AS [d]
+WHERE [d].[Id] = @__p_0
+2021-05-16 13:06:47.164 +02:00 [INF] Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[DepartmentId], [d].[Description], [d].[Name]
+FROM [DeansOffices] AS [d]
+WHERE [d].[DepartmentId] = @__p_0
+2021-05-16 13:06:47.221 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.DeansOffices.DeansOfficesController.GetDeansOffices (EDziekanat.Web.Api) in 999.1267ms
+2021-05-16 13:06:47.224 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.DeansOffices.DeansOfficesController.GetDeansOffices (EDziekanat.Web.Api)'
+2021-05-16 13:06:47.238 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Newtonsoft.Json.JsonSerializationException: Self referencing loop detected with type 'Castle.Proxies.DeansOfficeProxy'. Path '[0].department.deansOffices'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-16 13:06:47.565 +02:00 [INF] Request finished in 2339.6581ms 500 text/plain
+2021-05-16 13:08:42.472 +02:00 [INF] Starting web host
+2021-05-16 13:08:47.946 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-16 13:08:52.467 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-05-16 13:08:54.466 +02:00 [INF] Executed DbCommand (251ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-05-16 13:08:54.955 +02:00 [INF] Executed DbCommand (78ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-05-16 13:08:55.129 +02:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-05-16 13:08:55.292 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-05-16 13:08:55.572 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-05-16 13:08:55.639 +02:00 [INF] Executed DbCommand (66ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-05-16 13:08:56.256 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-16 13:08:56.256 +02:00 [INF] Hosting environment: Development
+2021-05-16 13:08:56.257 +02:00 [INF] Content root path: C:\Users\Andrzej\Desktop\API\src\EDziekanat.Web.Api
+2021-05-16 13:08:56.360 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-05-16 13:08:56.901 +02:00 [INF] Request finished in 544.5076ms 200 text/html;charset=utf-8
+2021-05-16 13:08:57.925 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-05-16 13:08:58.414 +02:00 [INF] Request finished in 491.5106ms 200 application/json;charset=utf-8
+2021-05-16 13:09:09.039 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Test/Get  
+2021-05-16 13:09:09.253 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Test.TestController.Get (EDziekanat.Web.Api)'
+2021-05-16 13:09:09.321 +02:00 [INF] Route matched with {action = "Get", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ObjectResult Get(System.String) on controller EDziekanat.Web.Api.Controller.Test.TestController (EDziekanat.Web.Api).
+2021-05-16 13:09:09.379 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-05-16 13:09:09.437 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Test.TestController.Get (EDziekanat.Web.Api) in 98.501ms
+2021-05-16 13:09:09.438 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Test.TestController.Get (EDziekanat.Web.Api)'
+2021-05-16 13:09:09.439 +02:00 [INF] Request finished in 401.6997ms 200 application/json; charset=utf-8
+2021-05-16 13:17:27.988 +02:00 [INF] Starting web host
+2021-05-16 13:18:07.715 +02:00 [INF] Starting web host
+2021-05-16 13:18:12.570 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-16 13:18:17.580 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-05-16 13:18:19.527 +02:00 [INF] Executed DbCommand (200ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-05-16 13:18:20.117 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-05-16 13:18:20.339 +02:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-05-16 13:18:20.502 +02:00 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-05-16 13:18:20.798 +02:00 [INF] Executed DbCommand (83ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-05-16 13:18:20.874 +02:00 [INF] Executed DbCommand (74ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-05-16 13:18:21.673 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-16 13:18:21.674 +02:00 [INF] Hosting environment: Development
+2021-05-16 13:18:21.674 +02:00 [INF] Content root path: C:\Users\Andrzej\Desktop\API\src\EDziekanat.Web.Api
+2021-05-16 13:18:21.777 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-05-16 13:18:22.280 +02:00 [INF] Request finished in 508.8421ms 200 text/html;charset=utf-8
+2021-05-16 13:18:23.378 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-05-16 13:18:23.881 +02:00 [INF] Request finished in 502.8744ms 200 application/json;charset=utf-8
+2021-05-16 13:18:38.739 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Departments  
+2021-05-16 13:18:38.971 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Departments.DepartmentsController.GetDepartments (EDziekanat.Web.Api)'
+2021-05-16 13:18:39.026 +02:00 [INF] Route matched with {action = "GetDepartments", controller = "Departments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[EDziekanat.Application.Departments.Vm.DepartmentVm]]] GetDepartments() on controller EDziekanat.Web.Api.Controller.Departments.DepartmentsController (EDziekanat.Web.Api).
+2021-05-16 13:18:43.788 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-05-16 13:18:44.135 +02:00 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[Address], [d].[Name], [d0].[Id], [d0].[DepartmentId], [d0].[Description], [d0].[Name]
+FROM [Departments] AS [d]
+LEFT JOIN [DeansOffices] AS [d0] ON [d].[Id] = [d0].[DepartmentId]
+ORDER BY [d].[Id], [d0].[Id]
+2021-05-16 13:19:06.107 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Application.Departments.Vm.DepartmentVm, EDziekanat.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-05-16 13:19:06.159 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Departments.DepartmentsController.GetDepartments (EDziekanat.Web.Api) in 27116.3819ms
+2021-05-16 13:19:06.163 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Departments.DepartmentsController.GetDepartments (EDziekanat.Web.Api)'
+2021-05-16 13:19:06.173 +02:00 [INF] Request finished in 27434.325ms 200 application/json; charset=utf-8
