@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using EDziekanat.Web.Core.ActionFilters;
 using EDziekanat.Web.Core.Extensions;
 using Swashbuckle.AspNetCore.Filters;
+using EDziekanat.Web.Api.Hubs;
 
 namespace EDziekanat.Web.Api
 {
@@ -53,6 +54,8 @@ namespace EDziekanat.Web.Api
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -80,6 +83,7 @@ namespace EDziekanat.Web.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }
