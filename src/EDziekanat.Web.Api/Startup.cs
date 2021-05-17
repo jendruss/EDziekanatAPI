@@ -55,7 +55,7 @@ namespace EDziekanat.Web.Api
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IUserAppService, UserAppService>();
             services.AddScoped<IDeansOfficesService, DeansOfficeService>();
-
+            services.AddSingleton<IReservationService, ReservationService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

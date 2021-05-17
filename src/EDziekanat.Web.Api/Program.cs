@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EDziekanat.Core.Permissions;
+using EDziekanat.Web.Api.HostedServices;
 using Serilog;
 using Serilog.Events;
 
@@ -56,6 +57,7 @@ namespace EDziekanat.Web.Api
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseSerilog();
-                });
+                }).ConfigureServices(services => 
+                    services.AddHostedService<BackgroundCreateReservationSchedules>());
     }
 }
