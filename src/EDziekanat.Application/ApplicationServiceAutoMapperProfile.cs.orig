@@ -27,7 +27,10 @@ namespace EDziekanat.Application
 
             CreateMap<CreateDepartmentDto, Department>();
             CreateMap<Department, DepartmentVm>();
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
             CreateMap<DeansOffice, DeansOfficeVm>();
         }
     }

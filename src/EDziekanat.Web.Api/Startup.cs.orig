@@ -53,9 +53,12 @@ namespace EDziekanat.Web.Api
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+<<<<<<< Updated upstream
             services.AddScoped<IUserAppService, UserAppService>();
+=======
             services.AddScoped<IDeansOfficesService, DeansOfficeService>();
 
+>>>>>>> Stashed changes
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

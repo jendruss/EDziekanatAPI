@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EDziekanat.Application.DeansOffices;
+using EDziekanat.Application.DeansOffices.Vm;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,32 +17,34 @@ namespace EDziekanat.Web.Api.Controller.DeansOffices
     public class DeansOfficesController : ControllerBase
     {
         private readonly EDziekanatDbContext _context;
+        private readonly IDeansOfficesService _deansOfficesService;
 
-        public DeansOfficesController(EDziekanatDbContext context)
+        public DeansOfficesController(EDziekanatDbContext context, IDeansOfficesService deansOfficesService)
         {
             _context = context;
+            _deansOfficesService = deansOfficesService;
         }
 
         // GET: api/DeansOffices
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<DeansOffice>>> GetDeansOffices()
-        {
-            return await _context.DeansOffices.ToListAsync();
-        }
-
-        // GET: api/DeansOffices/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<DeansOffice>> GetDeansOffice(Guid id)
+        public async Task<ActionResult<IEnumerable<DeansOfficeVm>>> GetDeansOfficesByDepartmentId(Guid id)
         {
-            var deansOffice = await _context.DeansOffices.FindAsync(id);
-
-            if (deansOffice == null)
-            {
-                return NotFound();
-            }
-
-            return deansOffice;
+            return await _deansOfficesService.GetDeansOfficesByDepartmentId(id);
         }
+
+        //// GET: api/DeansOffices/5
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<DeansOffice>> GetDeansOffice(Guid id)
+        //{
+        //    var deansOffice = await _context.DeansOffices.FindAsync(id);
+
+        //    if (deansOffice == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return deansOffice;
+        //}
 
         // PUT: api/DeansOffices/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
