@@ -57,7 +57,6 @@ namespace EDziekanat.Web.Api
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseSerilog();
-                }).ConfigureServices(services => 
-                    services.AddHostedService<BackgroundCreateReservationSchedules>());
+                });//.ConfigureServices(services => services.AddHostedService<BackgroundCreateReservationSchedules>());
     }
 }

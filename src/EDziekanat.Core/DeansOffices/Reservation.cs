@@ -7,6 +7,8 @@ namespace EDziekanat.Core.DeansOffices
     {
         public DateTime Date { get; set; }
 
+        public string OperationName { get; set; } //Reservations nie ma relacji do Operations tylko przepisuje nazwe
+
         public Guid DeansOfficeId { get; set; }
         public virtual DeansOffice DeansOffice { get; set; }
 

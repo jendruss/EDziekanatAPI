@@ -10,5 +10,6 @@ namespace EDziekanat.Core.DeansOffices
 
         public Guid DeansOfficeId { get; set; }
         public virtual DeansOffice DeansOffice { get; set; }
+
     }
 }

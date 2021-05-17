@@ -9,17 +9,17 @@ using Microsoft.Extensions.Logging;
 
 namespace EDziekanat.Web.Api.HostedServices
 {
-    public class BackgroundCreateReservationSchedules : BackgroundService
-    {
-        private readonly IReservationService _reservationService;
+    //public class BackgroundCreateReservationSchedules : BackgroundService
+    //{
+    //    private readonly IReservationService _reservationService;
 
-        public BackgroundCreateReservationSchedules(ILogger<BackgroundCreateReservationSchedules> logger, IReservationService reservationService)
-        {
-            _reservationService = reservationService;
-        }
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            await _reservationService.CreateSchedules(stoppingToken);
-        }
-    }
+    //    public BackgroundCreateReservationSchedules(ILogger<BackgroundCreateReservationSchedules> logger, IReservationService reservationService)
+    //    {
+    //        _reservationService = reservationService;
+    //    }
+    //    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    //    {
+    //        await _reservationService.CreateSchedules(stoppingToken);
+    //    }
+    //}
 }
