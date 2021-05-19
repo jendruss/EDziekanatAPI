@@ -29,6 +29,8 @@ namespace EDziekanat.Application
             CreateMap<Department, DepartmentVm>();
 
             CreateMap<DeansOffice, DeansOfficeVm>();
+
+            CreateMap<Reservation, ReservationVm>();
         }
     }
 }

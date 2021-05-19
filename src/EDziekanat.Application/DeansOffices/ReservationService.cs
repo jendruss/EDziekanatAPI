@@ -146,5 +146,71 @@ namespace EDziekanat.Application.DeansOffices
             _context.Reservations.AddRange(schedule);
             _context.SaveChanges();
         }
+
+        public async Task<ReservationVm> GetReservationByIdAsync(Guid reservationId)
+        {
+            var reservation = await _context.Reservations.FirstOrDefaultAsync(r => r.Id == reservationId);
+            return _mapper.Map<Reservation,ReservationVm>(reservation);
+        }
+
+        public async Task<ReservationVm> ReserveAsync(ReservationDto reservationDto)
+        {
+            var reservation = await _context.Reservations.FirstOrDefaultAsync(r => r.DeansOfficeId == reservationDto.DeansOfficeId && r.Date == reservationDto.Date );
+
+            if (reservation == null)
+            {
+                throw new Exception("Reservation with given Date and DeansOfficeId not found.");
+            }
+
+            if (reservation.StudentId != null)
+            {
+                throw new Exception("This date is already reserved.");
+            }
+
+            var now = DateTime.Now;
+            if (reservation.Date < now)
+            {
+                throw new Exception("Cannot reserve old slots.");
+            }
+
+            reservation.StudentId = reservationDto.StudentId;
+            reservation.OperationName = reservationDto.OperationName;
+
+            await _context.SaveChangesAsync();
+            return _mapper.Map<Reservation, ReservationVm>(reservation);
+        }
+
+        public async Task<ReservationVm> CancelReservationAsync(Guid reservationId)
+        {
+            var reservation = await _context.Reservations.FirstOrDefaultAsync(r => r.Id == reservationId);
+
+            if (reservation != null)
+            {
+                if (reservation.StudentId == null)
+                {
+                    throw new Exception("There is no student assigned to this reservation.");
+                }
+                reservation.StudentId = null;
+                reservation.OperationName = string.Empty;
+                await _context.SaveChangesAsync();
+            }
+
+            return _mapper.Map<Reservation, ReservationVm>(reservation);
+        }
+
+        public async Task<IEnumerable<ReservationVm>> GetAllCurrentReservationsForStudent(Guid studentId)
+        {
+            var now = DateTime.Now;
+            var reservations = await _context.Reservations.Where(r=>r.StudentId==studentId && r.Date>=now).ToListAsync(); // Założenie w projekcie, że student jest przypisany do jednego dziekanatu.
+
+            return _mapper.Map<List<Reservation>, List<ReservationVm>>(reservations);
+        }
+
+        public async Task<IEnumerable<ReservationVm>> GetReservationsForCurrentDayByDeansOfficeId(Guid deansOfficeId)
+        {
+            var today = DateTime.Now.Date;
+            var reservations = await _context.Reservations.Where(r => r.DeansOfficeId == deansOfficeId && r.Date.Date == today && r.StudentId!=null).ToListAsync();
+            return _mapper.Map<List<Reservation>, List<ReservationVm>>(reservations);
+        }
     }
 }
