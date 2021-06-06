@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using EDziekanat.Application.Messages.Dto;
+using EDziekanat.Application.Messages.Vm;
 
 namespace EDziekanat.Application.Messages
 {
     public interface IMessageService
     {
-        public Task AddMessage(MessageDto messageDto);
-        public Task<List<Message>> GetAllChannelMessages(object channelId);
+        public void AddMessage(MessageDto messageDto);
+        public List<MessageVm> GetAllMessagesForThisConversation(Guid userId, Guid deansOfficeId);
     }
 }

@@ -9,13 +9,12 @@ namespace EDziekanat.Core.Messages
 {
     public class Message : BaseEntity
     {
-        //todo: Czat mial zawierac załaczniki np pliki/zdjecia itp. - dodac property odpowiedzielane za przechowywanie plików
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Text { get; set; }
         public DateTime SendDate { get; set; }
-
-        public Guid StudentId { get; set; }
+        public Guid UserId { get; set; }
         public virtual User User { get; set; }
-
         public Guid DeansOfficeId { get; set; }
         public virtual DeansOffice DeansOffice { get; set; }
     }

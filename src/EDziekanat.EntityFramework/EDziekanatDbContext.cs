@@ -103,7 +103,7 @@ namespace EDziekanat.EntityFramework
             modelBuilder.Entity<Message>()
                 .HasOne<User>(m => m.User)
                 .WithMany(u => u.Messages)
-                .HasForeignKey(u => u.StudentId);
+                .HasForeignKey(u => u.UserId);
 
             modelBuilder.Entity<Message>()
                 .HasOne<DeansOffice>(m => m.DeansOffice)

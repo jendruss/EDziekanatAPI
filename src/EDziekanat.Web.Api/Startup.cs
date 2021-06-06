@@ -1,6 +1,7 @@
 ﻿using EDziekanat.Application;
 using EDziekanat.Application.DeansOffices;
 using EDziekanat.Application.Departments;
+using EDziekanat.Application.Messages;
 using EDziekanat.Application.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -57,6 +58,7 @@ namespace EDziekanat.Web.Api
             services.AddScoped<IUserAppService, UserAppService>();
             services.AddScoped<IDeansOfficesService, DeansOfficeService>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IMessageService, MessageService>();
 
             services.AddSignalR();
         }
