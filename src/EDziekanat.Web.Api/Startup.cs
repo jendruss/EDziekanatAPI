@@ -1,6 +1,7 @@
 ﻿using EDziekanat.Application;
 using EDziekanat.Application.DeansOffices;
 using EDziekanat.Application.Departments;
+using EDziekanat.Application.Messages;
 using EDziekanat.Application.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using EDziekanat.Web.Core.ActionFilters;
 using EDziekanat.Web.Core.Extensions;
 using Swashbuckle.AspNetCore.Filters;
+using EDziekanat.Web.Api.Hubs;
 
 namespace EDziekanat.Web.Api
 {
@@ -56,6 +58,9 @@ namespace EDziekanat.Web.Api
             services.AddScoped<IUserAppService, UserAppService>();
             services.AddScoped<IDeansOfficesService, DeansOfficeService>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IMessageService, MessageService>();
+
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -83,6 +88,7 @@ namespace EDziekanat.Web.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }
