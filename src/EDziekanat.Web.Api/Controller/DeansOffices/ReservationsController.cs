@@ -91,9 +91,9 @@ namespace EDziekanat.Web.Api.Controller.DeansOffices
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ReservationVm>> GetReservationsForCurrentDayByDeansOfficeId(Guid deansOfficeId)
+        public async Task<IEnumerable<ReservationVm>> GetReservationsByDeansOfficeId(Guid deansOfficeId)
         {
-            return await _reservationService.GetReservationsForCurrentDayByDeansOfficeId(deansOfficeId);
+            return await _reservationService.GetReservationsByDeansOfficeId(deansOfficeId);
         }
 
         [HttpGet]

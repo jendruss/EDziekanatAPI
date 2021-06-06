@@ -206,10 +206,10 @@ namespace EDziekanat.Application.DeansOffices
             return _mapper.Map<List<Reservation>, List<ReservationVm>>(reservations);
         }
 
-        public async Task<IEnumerable<ReservationVm>> GetReservationsForCurrentDayByDeansOfficeId(Guid deansOfficeId)
+        public async Task<IEnumerable<ReservationVm>> GetReservationsByDeansOfficeId(Guid deansOfficeId)
         {
             var today = DateTime.Now.Date;
-            var reservations = await _context.Reservations.Where(r => r.DeansOfficeId == deansOfficeId && r.Date.Date == today && r.StudentId!=null).Include(s=>s.Student).ToListAsync();
+            var reservations = await _context.Reservations.Where(r => r.DeansOfficeId == deansOfficeId && r.Date.Date >= today && r.StudentId!=null).Include(s=>s.Student).ToListAsync();
             return _mapper.Map<List<Reservation>, List<ReservationVm>>(reservations);
         }
     }
