@@ -51,7 +51,7 @@ namespace EDziekanat.Application.Messages
         
         public List<UserVm> GetStudentsWhichHaveConversation(Guid deansOfficeId)
         {
-            var studentsIds = _context.Messages.Where(m => m.DeansOfficeId == deansOfficeId).Select(i=>i.StudentId).ToList().Distinct();
+            var studentsIds = _context.Messages.Where(m => m.DeansOfficeId == deansOfficeId).OrderByDescending(u=>u.SendDate).Select(i=>i.StudentId).ToList().Distinct();
 
             var students = new List<UserVm>();
 
