@@ -11,6 +11,8 @@ namespace EDziekanat.Application.Messages
     public interface IMessageService
     {
         public void AddMessage(MessageDto messageDto);
-        public List<MessageVm> GetAllMessagesForThisConversation(Guid userId, Guid deansOfficeId);
+        public List<MessageVm> GetAllMessagesForThisConversation(Guid studentId, Guid deansOfficeId);
+
+        
     }
 }

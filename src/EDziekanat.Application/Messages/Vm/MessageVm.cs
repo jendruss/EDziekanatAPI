@@ -12,5 +12,6 @@ namespace EDziekanat.Application.Messages.Vm
         public DateTime SendDate { get; set; }
         public Guid UserId { get; set; }
         public Guid DeansOfficeId { get; set; }
+        public Guid StudentId { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace EDziekanat.Web.Api.Hubs
         {
             _messageService.AddMessage(messageDto);
 
-            List<MessageVm> msgs = _messageService.GetAllMessagesForThisConversation(messageDto.UserId,messageDto.DeansOfficeId);
+            List<MessageVm> msgs = _messageService.GetAllMessagesForThisConversation(messageDto.StudentId,messageDto.DeansOfficeId);
 
             JsonSerializerOptions options = new JsonSerializerOptions()
             {

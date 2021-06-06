@@ -13,9 +13,10 @@ namespace EDziekanat.Core.Messages
         public string LastName { get; set; }
         public string Text { get; set; }
         public DateTime SendDate { get; set; }
-        public Guid UserId { get; set; }
+        public Guid UserId { get; set; } // kto wyslal wiadomosc
         public virtual User User { get; set; }
         public Guid DeansOfficeId { get; set; }
         public virtual DeansOffice DeansOffice { get; set; }
+        public Guid StudentId { get; set; } // pole służące do zapisania z kim jest konwersacja
     }
 }

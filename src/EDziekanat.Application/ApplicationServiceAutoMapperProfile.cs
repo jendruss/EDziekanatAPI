@@ -35,6 +35,10 @@ namespace EDziekanat.Application
             CreateMap<Reservation, ReservationVm>()
                 .ForMember(dest=>dest.FirstName,opt=>opt.MapFrom(src=>src.Student.FirstName))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Student.LastName));
+
+            CreateMap<Reservation, ReservationVm>();
+
+            CreateMap<Message, MessageVm>();
         }
     }
 }

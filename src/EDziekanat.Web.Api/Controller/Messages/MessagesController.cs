@@ -22,9 +22,9 @@ namespace EDziekanat.Web.Api.Controller.Messages
 
 
         [HttpGet]
-        public IActionResult GetConversation(Guid userId, Guid deansOfficeId)
+        public IActionResult GetConversation(Guid studentId, Guid deansOfficeId)
         {
-            var messages = _messageService.GetAllMessagesForThisConversation(userId,deansOfficeId);
+            var messages = _messageService.GetAllMessagesForThisConversation(studentId,deansOfficeId);
 
             if (messages == null)
             {
@@ -52,6 +52,19 @@ namespace EDziekanat.Web.Api.Controller.Messages
             }
 
             return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult GetStudentsWithConversation(Guid userId, Guid deansOfficeId)
+        {
+            var messages = _messageService.GetAllMessagesForThisConversation(userId, deansOfficeId);
+
+            if (messages == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(messages);
         }
     }
 }

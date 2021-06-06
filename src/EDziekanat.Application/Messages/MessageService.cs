@@ -29,6 +29,7 @@ namespace EDziekanat.Application.Messages
                 Text = messageDto.Text,
                 SendDate = DateTime.Now,
                 UserId = messageDto.UserId,
+                StudentId = messageDto.StudentId,
                 DeansOfficeId = messageDto.DeansOfficeId
             };
 
@@ -36,10 +37,10 @@ namespace EDziekanat.Application.Messages
             _context.SaveChanges();
         }
 
-        public List<MessageVm> GetAllMessagesForThisConversation(Guid userId, Guid deansOfficeId)
+        public List<MessageVm> GetAllMessagesForThisConversation(Guid studentId, Guid deansOfficeId)
         {
             var messages = _context.Messages
-                .Where(m => m.UserId==userId && m.DeansOfficeId == deansOfficeId)
+                .Where(m => m.StudentId==studentId && m.DeansOfficeId == deansOfficeId)
                 .OrderBy(m => m.SendDate)
                 .ToList();
             return _mapper.Map<List<Message>, List<MessageVm>>(messages);
