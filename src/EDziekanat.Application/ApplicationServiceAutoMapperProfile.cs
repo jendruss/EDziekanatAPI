@@ -30,7 +30,9 @@ namespace EDziekanat.Application
 
             CreateMap<DeansOffice, DeansOfficeVm>();
 
-            CreateMap<Reservation, ReservationVm>();
+            CreateMap<Reservation, ReservationVm>()
+                .ForMember(dest=>dest.FirstName,opt=>opt.MapFrom(src=>src.Student.FirstName))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Student.LastName));
         }
     }
 }

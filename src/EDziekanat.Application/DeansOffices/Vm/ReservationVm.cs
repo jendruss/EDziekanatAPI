@@ -14,5 +14,7 @@ namespace EDziekanat.Application.DeansOffices.Vm
         public Guid DeansOfficeId { get; set; }
 
         public Guid StudentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
