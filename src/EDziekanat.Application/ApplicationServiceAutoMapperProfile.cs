@@ -6,6 +6,7 @@ using EDziekanat.Application.Messages.Vm;
 using EDziekanat.Application.Permissions.Dto;
 using EDziekanat.Application.Roles.Dto;
 using EDziekanat.Application.Users.Dto;
+using EDziekanat.Application.Users.Vm;
 using EDziekanat.Core.DeansOffices;
 using EDziekanat.Core.Departments;
 using EDziekanat.Core.Messages;
@@ -39,6 +40,8 @@ namespace EDziekanat.Application
             CreateMap<Reservation, ReservationVm>();
 
             CreateMap<Message, MessageVm>();
+
+            CreateMap<User, UserVm>();
         }
     }
 }

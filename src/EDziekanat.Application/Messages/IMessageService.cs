@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EDziekanat.Application.Messages.Dto;
 using EDziekanat.Application.Messages.Vm;
+using EDziekanat.Application.Users.Vm;
 
 namespace EDziekanat.Application.Messages
 {
@@ -12,7 +13,6 @@ namespace EDziekanat.Application.Messages
     {
         public void AddMessage(MessageDto messageDto);
         public List<MessageVm> GetAllMessagesForThisConversation(Guid studentId, Guid deansOfficeId);
-
-        
+        public List<UserVm> GetStudentsWhichHaveConversation(Guid deansOfficeId);
     }
 }

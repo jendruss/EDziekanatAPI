@@ -19,8 +19,6 @@ namespace EDziekanat.Web.Api.Controller.Messages
             _messageService = messageService;
         }
 
-
-
         [HttpGet]
         public IActionResult GetConversation(Guid studentId, Guid deansOfficeId)
         {
@@ -55,16 +53,17 @@ namespace EDziekanat.Web.Api.Controller.Messages
         }
 
         [HttpGet]
-        public IActionResult GetStudentsWithConversation(Guid userId, Guid deansOfficeId)
+        public IActionResult GetStudentsWhichHaveConversation(Guid deansOfficeId)
         {
-            var messages = _messageService.GetAllMessagesForThisConversation(userId, deansOfficeId);
+            var students = _messageService.GetStudentsWhichHaveConversation(deansOfficeId);
 
-            if (messages == null)
+            if(students == null)
             {
                 return NotFound();
             }
 
-            return Ok(messages);
+            return Ok(students);
         }
+
     }
 }
