@@ -19,6 +19,8 @@ namespace EDziekanat.Web.Api
 {
     public class Startup
     {
+
+
         private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
@@ -35,6 +37,8 @@ namespace EDziekanat.Web.Api
             services.ConfigureDependencyInjection();
             services.ConfigureEDziekanatApplication();
             services.ConfigureSmtp(_configuration);
+
+          
 
             services.AddControllers(setup => { setup.Filters.AddService<UnitOfWorkActionFilter>(); })
                 .AddNewtonsoftJson();
@@ -59,6 +63,18 @@ namespace EDziekanat.Web.Api
             services.AddScoped<IDeansOfficesService, DeansOfficeService>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IMessageService, MessageService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: _configuration["App:CorsOriginPolicyName"],
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:8080")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod()
+                                      .AllowCredentials();
+                                  });
+            });
 
             services.AddSignalR();
         }
