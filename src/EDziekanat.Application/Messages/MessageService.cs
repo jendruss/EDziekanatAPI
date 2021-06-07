@@ -58,7 +58,10 @@ namespace EDziekanat.Application.Messages
             foreach (var id in studentsIds)
             {
                 var student = _context.Users.FirstOrDefault(u => u.Id == id);
-                students.Add(_mapper.Map<User, UserVm>(student));
+                if (student != null)
+                {
+                    students.Add(_mapper.Map<User, UserVm>(student));
+                }
             }
 
             return students;

@@ -6209,3 +6209,754 @@ VALUES (@p30, @p31),
 2021-06-06 19:13:01.225 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/chatHub?id=C_N4o7X2w9usDdvMxiCXgQ  
 2021-06-06 19:13:01.226 +02:00 [INF] CORS policy execution successful.
 2021-06-06 19:13:01.228 +02:00 [INF] Executing endpoint '/chatHub'
+2021-06-07 18:03:42.191 +02:00 [INF] Starting web host
+2021-06-07 18:03:43.756 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-06-07 18:03:44.842 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:03:45.662 +02:00 [INF] Executed DbCommand (110ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-06-07 18:03:45.866 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-06-07 18:03:45.991 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-06-07 18:03:46.107 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-06-07 18:03:46.296 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-06-07 18:03:46.350 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-06-07 18:03:46.677 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 18:03:46.677 +02:00 [INF] Hosting environment: Development
+2021-06-07 18:03:46.677 +02:00 [INF] Content root path: C:\Users\Andrzej\repos\EDziekanat\EDziekanatAPI\src\EDziekanat.Web.Api
+2021-06-07 18:03:46.691 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-06-07 18:03:46.815 +02:00 [INF] Request finished in 125.6178ms 200 text/html;charset=utf-8
+2021-06-07 18:03:46.946 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-06-07 18:03:47.050 +02:00 [INF] Request finished in 103.7033ms 200 application/json;charset=utf-8
+2021-06-07 18:03:49.785 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/login  
+2021-06-07 18:03:49.789 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:03:49.791 +02:00 [INF] Request finished in 6.9808ms 204 
+2021-06-07 18:03:49.795 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/api/login application/json;charset=UTF-8 63
+2021-06-07 18:03:49.796 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:03:49.864 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api)'
+2021-06-07 18:03:49.887 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[EDziekanat.Application.Dto.Account.LoginOutput]] Login(EDziekanat.Application.Dto.Account.LoginInput) on controller EDziekanat.Web.Api.Controller.Account.AccountController (EDziekanat.Web.Api).
+2021-06-07 18:03:49.967 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:03:50.045 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2021-06-07 18:03:50.111 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2021-06-07 18:03:50.200 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+2021-06-07 18:03:57.092 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[RoleId]
+FROM [UserRole] AS [u]
+WHERE [u].[UserId] = @__p_0
+2021-06-07 18:03:57.125 +02:00 [INF] Executing ObjectResult, writing value of type 'EDziekanat.Application.Dto.Account.LoginOutput'.
+2021-06-07 18:03:57.135 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api) in 7244.4291ms
+2021-06-07 18:03:57.136 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api)'
+2021-06-07 18:03:57.139 +02:00 [INF] Request finished in 7343.558ms 200 application/json; charset=utf-8
+2021-06-07 18:04:17.240 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/login  
+2021-06-07 18:04:17.240 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:17.241 +02:00 [INF] Request finished in 1.7619ms 204 
+2021-06-07 18:04:17.242 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/api/login application/json;charset=UTF-8 61
+2021-06-07 18:04:17.243 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:17.246 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api)'
+2021-06-07 18:04:17.247 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[EDziekanat.Application.Dto.Account.LoginOutput]] Login(EDziekanat.Application.Dto.Account.LoginInput) on controller EDziekanat.Web.Api.Controller.Account.AccountController (EDziekanat.Web.Api).
+2021-06-07 18:04:17.257 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:04:17.313 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2021-06-07 18:04:17.366 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2021-06-07 18:04:17.420 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+2021-06-07 18:04:17.471 +02:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[RoleId]
+FROM [UserRole] AS [u]
+WHERE [u].[UserId] = @__p_0
+2021-06-07 18:04:17.473 +02:00 [INF] Executing ObjectResult, writing value of type 'EDziekanat.Application.Dto.Account.LoginOutput'.
+2021-06-07 18:04:17.473 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api) in 225.6589ms
+2021-06-07 18:04:17.473 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Account.AccountController.Login (EDziekanat.Web.Api)'
+2021-06-07 18:04:17.473 +02:00 [INF] Request finished in 231.2698ms 200 application/json; charset=utf-8
+2021-06-07 18:04:21.217 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/chatHub/negotiate  
+2021-06-07 18:04:21.218 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:21.218 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/Messages/GetConversation?studentId=f8efd713-8468-4f8f-3b22-08d928f141e9&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:04:21.218 +02:00 [INF] Request finished in 1.415ms 204 
+2021-06-07 18:04:21.218 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:21.218 +02:00 [INF] Request finished in 0.4592ms 204 
+2021-06-07 18:04:21.220 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Messages/GetConversation?studentId=f8efd713-8468-4f8f-3b22-08d928f141e9&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:04:21.221 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:21.223 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/chatHub/negotiate text/plain;charset=UTF-8 0
+2021-06-07 18:04:21.223 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:21.224 +02:00 [INF] Executing endpoint '/chatHub/negotiate'
+2021-06-07 18:04:21.235 +02:00 [INF] Executed endpoint '/chatHub/negotiate'
+2021-06-07 18:04:21.235 +02:00 [INF] Request finished in 12.1817ms 200 application/json
+2021-06-07 18:04:21.238 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/chatHub?id=5ZATImFo8cMs6r5GBJjMOw  
+2021-06-07 18:04:21.239 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:21.239 +02:00 [INF] Executing endpoint '/chatHub'
+2021-06-07 18:04:21.262 +02:00 [INF] Successfully validated the token.
+2021-06-07 18:04:21.263 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:04:21.268 +02:00 [INF] Route matched with {action = "GetConversation", controller = "Messages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetConversation(System.Guid, System.Guid) on controller EDziekanat.Web.Api.Controller.Messages.MessagesController (EDziekanat.Web.Api).
+2021-06-07 18:04:27.165 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:04:27.233 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:04:27.246 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Application.Messages.Vm.MessageVm, EDziekanat.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-07 18:04:27.251 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api) in 5983.242ms
+2021-06-07 18:04:27.251 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:04:27.252 +02:00 [INF] Request finished in 6031.3701ms 200 application/json; charset=utf-8
+2021-06-07 18:04:34.320 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/chatHub/negotiate  
+2021-06-07 18:04:34.320 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:34.321 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/Messages/GetConversation?studentId=df75a428-cd5b-4fb5-91bd-08d928e90191&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:04:34.321 +02:00 [INF] Request finished in 1.3396ms 204 
+2021-06-07 18:04:34.321 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:34.321 +02:00 [INF] Request finished in 0.8212ms 204 
+2021-06-07 18:04:34.322 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Messages/GetConversation?studentId=df75a428-cd5b-4fb5-91bd-08d928e90191&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:04:34.322 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:34.324 +02:00 [INF] Successfully validated the token.
+2021-06-07 18:04:34.324 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:04:34.325 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/chatHub/negotiate text/plain;charset=UTF-8 0
+2021-06-07 18:04:34.325 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:34.325 +02:00 [INF] Executing endpoint '/chatHub/negotiate'
+2021-06-07 18:04:34.325 +02:00 [INF] Route matched with {action = "GetConversation", controller = "Messages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetConversation(System.Guid, System.Guid) on controller EDziekanat.Web.Api.Controller.Messages.MessagesController (EDziekanat.Web.Api).
+2021-06-07 18:04:34.325 +02:00 [INF] Executed endpoint '/chatHub/negotiate'
+2021-06-07 18:04:34.325 +02:00 [INF] Request finished in 0.7426ms 200 application/json
+2021-06-07 18:04:37.092 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/chatHub?id=uwubaIQbAsUW92pBpPhoQg  
+2021-06-07 18:04:38.921 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:04:38.921 +02:00 [INF] Executing endpoint '/chatHub'
+2021-06-07 18:04:38.922 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:04:38.978 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:04:38.979 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Application.Messages.Vm.MessageVm, EDziekanat.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-07 18:04:38.980 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api) in 4655.2532ms
+2021-06-07 18:04:38.980 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:04:38.980 +02:00 [INF] Request finished in 4658.0351ms 200 application/json; charset=utf-8
+2021-06-07 18:12:35.287 +02:00 [INF] Starting web host
+2021-06-07 18:12:36.211 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-06-07 18:12:37.189 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:12:37.964 +02:00 [INF] Executed DbCommand (85ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-06-07 18:12:38.161 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-06-07 18:12:38.307 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-06-07 18:12:38.428 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-06-07 18:12:38.625 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-06-07 18:12:38.686 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-06-07 18:12:38.937 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 18:12:38.937 +02:00 [INF] Hosting environment: Development
+2021-06-07 18:12:38.937 +02:00 [INF] Content root path: C:\Users\Andrzej\repos\EDziekanat\EDziekanatAPI\src\EDziekanat.Web.Api
+2021-06-07 18:12:38.950 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-06-07 18:12:39.067 +02:00 [INF] Request finished in 119.3886ms 200 text/html;charset=utf-8
+2021-06-07 18:12:39.196 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-06-07 18:12:39.288 +02:00 [INF] Request finished in 91.9969ms 200 application/json;charset=utf-8
+2021-06-07 18:12:51.920 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/chatHub/negotiate  
+2021-06-07 18:12:51.928 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:12:51.928 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/Messages/GetConversation?studentId=df75a428-cd5b-4fb5-91bd-08d928e90191&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:12:51.930 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:12:51.934 +02:00 [INF] Request finished in 6.0807ms 204 
+2021-06-07 18:12:51.934 +02:00 [INF] Request finished in 13.9832ms 204 
+2021-06-07 18:12:51.936 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Messages/GetConversation?studentId=df75a428-cd5b-4fb5-91bd-08d928e90191&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:12:51.936 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/chatHub/negotiate text/plain;charset=UTF-8 0
+2021-06-07 18:12:51.937 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:12:51.937 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:12:52.015 +02:00 [INF] Executing endpoint '/chatHub/negotiate'
+2021-06-07 18:12:52.028 +02:00 [INF] Executed endpoint '/chatHub/negotiate'
+2021-06-07 18:12:52.029 +02:00 [INF] Request finished in 92.628ms 200 application/json
+2021-06-07 18:12:52.033 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/chatHub?id=wxEce8YWS_JQFLYVY01Fpg  
+2021-06-07 18:12:52.033 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:12:52.035 +02:00 [INF] Executing endpoint '/chatHub'
+2021-06-07 18:12:52.087 +02:00 [INF] Successfully validated the token.
+2021-06-07 18:12:52.088 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:12:52.104 +02:00 [INF] Route matched with {action = "GetConversation", controller = "Messages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetConversation(System.Guid, System.Guid) on controller EDziekanat.Web.Api.Controller.Messages.MessagesController (EDziekanat.Web.Api).
+2021-06-07 18:12:52.132 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:12:52.194 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:12:52.223 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Application.Messages.Vm.MessageVm, EDziekanat.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-07 18:12:52.235 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api) in 127.4188ms
+2021-06-07 18:12:52.236 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:12:52.237 +02:00 [INF] Request finished in 301.4505ms 200 application/json; charset=utf-8
+2021-06-07 18:12:58.618 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:12:58.739 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Id], [DeansOfficeId], [FirstName], [LastName], [SendDate], [StudentId], [Text], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2021-06-07 18:12:58.853 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:12:58.917 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+WHERE [r].[NormalizedName] = N'EMPLOYEE'
+2021-06-07 18:13:15.114 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:13:15.223 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Id], [DeansOfficeId], [FirstName], [LastName], [SendDate], [StudentId], [Text], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2021-06-07 18:13:15.512 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:13:16.364 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+WHERE [r].[NormalizedName] = N'EMPLOYEE'
+2021-06-07 18:14:05.012 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/api/Messages/GetConversation?studentId=f8efd713-8468-4f8f-3b22-08d928f141e9&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:14:05.012 +02:00 [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44313/chatHub/negotiate  
+2021-06-07 18:14:05.013 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:14:05.013 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:14:05.014 +02:00 [INF] Request finished in 2.7147ms 204 
+2021-06-07 18:14:05.014 +02:00 [INF] Request finished in 2.6419ms 204 
+2021-06-07 18:14:05.023 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Messages/GetConversation?studentId=f8efd713-8468-4f8f-3b22-08d928f141e9&deansOfficeId=1a7258e3-df7b-4820-9ad5-ee2caa54d585  
+2021-06-07 18:14:05.023 +02:00 [INF] Request starting HTTP/2.0 POST https://localhost:44313/chatHub/negotiate text/plain;charset=UTF-8 0
+2021-06-07 18:14:05.023 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:14:05.023 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:14:05.024 +02:00 [INF] Executing endpoint '/chatHub/negotiate'
+2021-06-07 18:14:05.025 +02:00 [INF] Executed endpoint '/chatHub/negotiate'
+2021-06-07 18:14:05.025 +02:00 [INF] Request finished in 2.3057ms 200 application/json
+2021-06-07 18:14:05.029 +02:00 [INF] Successfully validated the token.
+2021-06-07 18:14:05.029 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:14:05.030 +02:00 [INF] Route matched with {action = "GetConversation", controller = "Messages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetConversation(System.Guid, System.Guid) on controller EDziekanat.Web.Api.Controller.Messages.MessagesController (EDziekanat.Web.Api).
+2021-06-07 18:14:05.033 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:14:05.035 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/chatHub?id=H5ip8QZOwVjz9Ix13I4Nlg  
+2021-06-07 18:14:05.035 +02:00 [INF] CORS policy execution successful.
+2021-06-07 18:14:05.035 +02:00 [INF] Executing endpoint '/chatHub'
+2021-06-07 18:14:05.425 +02:00 [INF] Executed DbCommand (390ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:14:05.427 +02:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[EDziekanat.Application.Messages.Vm.MessageVm, EDziekanat.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-06-07 18:14:05.428 +02:00 [INF] Executed action EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api) in 397.0764ms
+2021-06-07 18:14:05.428 +02:00 [INF] Executed endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetConversation (EDziekanat.Web.Api)'
+2021-06-07 18:14:05.428 +02:00 [INF] Request finished in 405.3743ms 200 application/json; charset=utf-8
+2021-06-07 18:14:11.887 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:14:11.996 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Id], [DeansOfficeId], [FirstName], [LastName], [SendDate], [StudentId], [Text], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2021-06-07 18:14:12.115 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:14:12.173 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+WHERE [r].[NormalizedName] = N'EMPLOYEE'
+2021-06-07 18:14:22.610 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 18:14:22.718 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Messages] ([Id], [DeansOfficeId], [FirstName], [LastName], [SendDate], [StudentId], [Text], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2021-06-07 18:14:22.833 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@__studentId_0='?' (DbType = Guid), @__deansOfficeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[DeansOfficeId], [m].[FirstName], [m].[LastName], [m].[SendDate], [m].[StudentId], [m].[Text], [m].[UserId]
+FROM [Messages] AS [m]
+WHERE ([m].[StudentId] = @__studentId_0) AND ([m].[DeansOfficeId] = @__deansOfficeId_1)
+ORDER BY [m].[SendDate]
+2021-06-07 18:14:22.890 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[IsSystemDefault], [r].[Name], [r].[NormalizedName]
+FROM [Role] AS [r]
+WHERE [r].[NormalizedName] = N'EMPLOYEE'
+2021-06-07 19:32:02.964 +02:00 [INF] Starting web host
+2021-06-07 19:32:04.260 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-06-07 19:32:05.251 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 19:32:06.042 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-06-07 19:32:06.241 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-06-07 19:32:06.384 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-06-07 19:32:06.502 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-06-07 19:32:06.688 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-06-07 19:32:06.742 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-06-07 19:32:07.039 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 19:32:07.039 +02:00 [INF] Hosting environment: Development
+2021-06-07 19:32:07.039 +02:00 [INF] Content root path: C:\Users\Andrzej\repos\EDziekanat\EDziekanatAPI\src\EDziekanat.Web.Api
+2021-06-07 19:32:07.052 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-06-07 19:32:07.177 +02:00 [INF] Request finished in 125.934ms 200 text/html;charset=utf-8
+2021-06-07 19:32:07.321 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-06-07 19:32:07.426 +02:00 [INF] Request finished in 105.6921ms 200 application/json;charset=utf-8
+2021-06-07 19:56:01.693 +02:00 [INF] Starting web host
+2021-06-07 19:56:02.667 +02:00 [INF] User profile is available. Using 'C:\Users\Andrzej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-06-07 19:56:03.589 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 19:56:04.370 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[@__Admin_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId]
+FROM [RolePermission] AS [r]
+WHERE [r].[RoleId] = @__Admin_Id_0
+2021-06-07 19:56:04.575 +02:00 [INF] Executed DbCommand (58ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = Guid), @p11='?' (DbType = Guid), @p12='?' (DbType = Guid), @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Guid), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p0 AND [PermissionId] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p2 AND [PermissionId] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p4 AND [PermissionId] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p6 AND [PermissionId] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p8 AND [PermissionId] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p10 AND [PermissionId] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p12 AND [PermissionId] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p14 AND [PermissionId] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p16 AND [PermissionId] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [RolePermission]
+WHERE [RoleId] = @p18 AND [PermissionId] = @p19;
+SELECT @@ROWCOUNT;
+2021-06-07 19:56:04.707 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DisplayName], [p].[Name]
+FROM [Permission] AS [p]
+2021-06-07 19:56:04.827 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Permission]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [Permission]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+2021-06-07 19:56:05.014 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Guid), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Guid), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Guid), @p28='?' (Size = 4000), @p29='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([Id], [DisplayName], [Name])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14),
+(@p15, @p16, @p17),
+(@p18, @p19, @p20),
+(@p21, @p22, @p23),
+(@p24, @p25, @p26),
+(@p27, @p28, @p29);
+2021-06-07 19:56:05.068 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@p30='?' (DbType = Guid), @p31='?' (DbType = Guid), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = Guid), @p36='?' (DbType = Guid), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = Guid), @p40='?' (DbType = Guid), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = Guid), @p45='?' (DbType = Guid), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = Guid), @p49='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RolePermission] ([RoleId], [PermissionId])
+VALUES (@p30, @p31),
+(@p32, @p33),
+(@p34, @p35),
+(@p36, @p37),
+(@p38, @p39),
+(@p40, @p41),
+(@p42, @p43),
+(@p44, @p45),
+(@p46, @p47),
+(@p48, @p49);
+2021-06-07 19:56:05.322 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 19:56:05.322 +02:00 [INF] Hosting environment: Development
+2021-06-07 19:56:05.322 +02:00 [INF] Content root path: C:\Users\Andrzej\repos\EDziekanat\EDziekanatAPI\src\EDziekanat.Web.Api
+2021-06-07 19:56:05.334 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/index.html  
+2021-06-07 19:56:05.455 +02:00 [INF] Request finished in 122.5083ms 200 text/html;charset=utf-8
+2021-06-07 19:56:05.572 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/swagger/v1/swagger.json  
+2021-06-07 19:56:05.671 +02:00 [INF] Request finished in 98.8368ms 200 application/json;charset=utf-8
+2021-06-07 19:56:33.869 +02:00 [INF] Request starting HTTP/2.0 GET https://localhost:44313/api/Messages/GetStudentsWhichHaveConversation?deansOfficeId=1A7258E3-DF7B-4820-9AD5-EE2CAA54D585  
+2021-06-07 19:56:33.940 +02:00 [INF] Executing endpoint 'EDziekanat.Web.Api.Controller.Messages.MessagesController.GetStudentsWhichHaveConversation (EDziekanat.Web.Api)'
+2021-06-07 19:56:33.959 +02:00 [INF] Route matched with {action = "GetStudentsWhichHaveConversation", controller = "Messages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetStudentsWhichHaveConversation(System.Guid) on controller EDziekanat.Web.Api.Controller.Messages.MessagesController (EDziekanat.Web.Api).
+2021-06-07 19:56:36.115 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'EDziekanatDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2021-06-07 19:56:36.270 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__deansOfficeId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[StudentId]
+FROM [Messages] AS [m]
+WHERE [m].[DeansOfficeId] = @__deansOfficeId_0
+ORDER BY [m].[SendDate] DESC
+2021-06-07 19:56:46.610 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2021-06-07 19:56:51.952 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2021-06-07 19:56:57.975 +02:00 [INF] Executed DbCommand (58ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2021-06-07 19:57:03.486 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[DeansOfficeId], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
