@@ -25,6 +25,12 @@ namespace EDziekanat.Web.Api.Hubs
             _messageService = messageService;
         }
 
+        public async Task AddToGroup(string groupName)
+            => await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+
+        public async Task RemoveFromGroup(string groupName)
+            => await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+
         public async Task SendPrivateMessage(MessageDto messageDto)
         {
             _messageService.AddMessage(messageDto);
@@ -46,11 +52,11 @@ namespace EDziekanat.Web.Api.Hubs
                 employeeRoleId = Guid.Parse("11D14A89-3A93-4D39-A94F-82B823F0D4CE");
             }
 
-            var destinationUserId = _context.Users.Include(r => r.UserRoles)
-                .Where(u => u.DeansOfficeId == messageDto.DeansOfficeId &&
-                            u.UserRoles.Any(ur => ur.RoleId == employeeRoleId)).Select(u=>u.Id).ToString();
+            //var destinationUserId = _context.Users.Include(r => r.UserRoles)
+            //    .Where(u => u.DeansOfficeId == messageDto.DeansOfficeId &&
+            //                u.UserRoles.Any(ur => ur.RoleId == employeeRoleId)).Select(u=>u.Id).ToString();
 
-            await Clients.User(destinationUserId).SendAsync("ReceiveMessage", jsonResult);
+            await Clients.Group(messageDto.StudentId+"-"+messageDto.DeansOfficeId).SendAsync("ReceiveMessage", jsonResult);
         }
     }
 }
