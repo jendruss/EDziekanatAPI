@@ -206,6 +206,12 @@ namespace EDziekanat.Application.DeansOffices
             return _mapper.Map<List<Reservation>, List<ReservationVm>>(reservations);
         }
 
+        
+        public async Task<IEnumerable<string>> GetAvailableOperationsByDeansOfficeId(Guid deansOfficeId)
+        {
+            return await _context.Operations.Where(o => o.DeansOfficeId == deansOfficeId).OrderBy(o => o.Name).Select(o => o.Name).ToListAsync();
+        }
+
         public async Task<IEnumerable<ReservationVm>> GetReservationsByDeansOfficeId(Guid deansOfficeId)
         {
             var today = DateTime.Now.Date;

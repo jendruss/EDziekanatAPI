@@ -102,5 +102,11 @@ namespace EDziekanat.Web.Api.Controller.DeansOffices
             return await _reservationService.GetAllCurrentReservationsForStudent(studentId);
         }
 
+        [HttpGet]
+        public async Task<IEnumerable<string>> GetAvailableOperationsByDeansOfficeId(Guid deansOfficeId)
+        {
+            return await _reservationService.GetAvailableOperationsByDeansOfficeId(deansOfficeId);
+        }
+
     }
 }

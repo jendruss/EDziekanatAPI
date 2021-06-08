@@ -20,5 +20,6 @@ namespace EDziekanat.Application.DeansOffices
         public Task<ReservationVm> CancelReservationAsync(Guid id);
         public Task<IEnumerable<ReservationVm>> GetAllCurrentReservationsForStudent(Guid studentId);
         public Task<IEnumerable<ReservationVm>> GetReservationsByDeansOfficeId(Guid deansOfficeId);
+        Task<IEnumerable<string>> GetAvailableOperationsByDeansOfficeId(Guid deansOfficeId);
     }
 }
